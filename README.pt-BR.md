@@ -6,8 +6,8 @@ Um aplicativo web local para organizar **cenas e prompts de imagem** em fluxos d
 
 Sem servidor, sem banco de dados, sem conta: são só `index.html`, `style.css` e `app.js`.
 
-![Workspace](docs\assets\Workspace.png)
-![Workspace](docs\assets\Workspace2.png)
+![Workspace](docs/assets/Workspace.png)
+![Workspace](docs/assets/Workspace2.png)
 
 ## ✨ Funcionalidades
 
