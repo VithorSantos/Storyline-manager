@@ -6,8 +6,8 @@ Una aplicación web local para organizar **escenas y prompts de imagen** en fluj
 
 Sin servidor, sin base de datos, sin cuenta: solo `index.html`, `style.css` y `app.js`.
 
-![Workspace](docs\assets\Workspace.png)
-![Workspace](docs\assets\Workspace2.png)
+![Workspace](docs/assets/Workspace.png)
+![Workspace](docs/assets/Workspace2.png)
 
 ## ✨ Funcionalidades
 
