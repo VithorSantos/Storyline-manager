@@ -6,8 +6,8 @@ A local web app to organize **scenes and image prompts** for AI image workflows 
 
 No server, no database, no account: it is just `index.html`, `style.css` and `app.js`.
 
-![Workspace](docs\assets\Workspace.png)
-![Workspace](docs\assets\Workspace2.png)
+![Workspace](docs/assets/Workspace.png)
+![Workspace](docs/assets/Workspace2.png)
 
 ## ✨ Features
 
