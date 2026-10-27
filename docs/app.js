@@ -3,9 +3,9 @@ const $ = id => document.getElementById(id);
 
 /* ---------- i18n (PT / EN / ES) ---------- */
 const I18N = {
-  pt: { homeDesc: 'Gerencie suas storylines salvando diretamente em arquivos JSON na sua pasta local.', pick: 'Selecione uma pasta para guardar ou carregar suas storylines', newSt: '+ Nova Storyline', addSec: '+ Adicionar Seção', save: 'Salvar na Pasta', addCard: '+ Adicionar Card', addImg: '+ Imagem', poseTitle: 'Título da Pose', newPose: 'Nova Pose', firstSec: 'Seção 1', positive: 'Prompt Positivo', negative: 'Prompt Negativo', basePrompt: 'Prompt Base', lora: 'URL da LoRA', open: 'Abrir', urlPh: 'URL de referência (https://...)', chars: 'chars', resHint: 'Resolução recomendada: 1024×1024', delSt: 'Excluir a storyline "{n}"? O arquivo será apagado da pasta.', deleted: 'Storyline excluída!', expand: 'Clique duas vezes para expandir', renameSt: 'Renomear storyline', nameExists: 'Já existe um arquivo com esse nome.', renamed: 'Renomeado!', ph: 'Digite as tags...', copy: 'Copiar prompt', copied: 'Copiado!', noImg: 'Sem imagem', ok: 'OK', cancel: 'Cancelar', del: 'Excluir', discard: 'Descartar', delSec: 'Excluir esta seção e todos os seus cards?', delCard: 'Excluir este card?', delImg: 'Remover imagem', secName: 'Nome da seção', stName: 'Nome da storyline', saved: 'Salvo na pasta!', unsupported: 'Use Chrome ou Edge (File System Access API).', noFiles: 'Nenhuma storyline na pasta. Crie uma nova.', unsaved: 'Há alterações não salvas. Deseja salvar antes de continuar?', err: 'Erro: ' },
-  en: { homeDesc: 'Manage your storylines by saving straight to JSON files in your local folder.', pick: 'Select a folder to store or load your storylines', newSt: '+ New Storyline', addSec: '+ Add Section', save: 'Save to Folder', addCard: '+ Add Card', addImg: '+ Image', poseTitle: 'Pose title', newPose: 'New Pose', firstSec: 'Section 1', positive: 'Positive Prompt', negative: 'Negative Prompt', basePrompt: 'Base Prompt', lora: 'LoRA URL', open: 'Open', urlPh: 'Reference URL (https://...)', chars: 'chars', resHint: 'Recommended resolution: 1024×1024', delSt: 'Delete storyline "{n}"? The file will be removed from the folder.', deleted: 'Storyline deleted!', expand: 'Double-click to expand', renameSt: 'Rename storyline', nameExists: 'A file with that name already exists.', renamed: 'Renamed!', ph: 'Type tags...', copy: 'Copy prompt', copied: 'Copied!', noImg: 'No image', ok: 'OK', cancel: 'Cancel', del: 'Delete', discard: 'Discard', delSec: 'Delete this section and all its cards?', delCard: 'Delete this card?', delImg: 'Remove image', secName: 'Section name', stName: 'Storyline name', saved: 'Saved to folder!', unsupported: 'Use Chrome or Edge (File System Access API).', noFiles: 'No storylines in this folder. Create one.', unsaved: 'You have unsaved changes. Save before continuing?', err: 'Error: ' },
-  es: { homeDesc: 'Gestiona tus storylines guardando directamente en archivos JSON en tu carpeta local.', pick: 'Selecciona una carpeta para guardar o cargar tus storylines', newSt: '+ Nueva Storyline', addSec: '+ Añadir Sección', save: 'Guardar en la Carpeta', addCard: '+ Añadir Card', addImg: '+ Imagen', poseTitle: 'Título de la pose', newPose: 'Nueva Pose', firstSec: 'Sección 1', positive: 'Prompt Positivo', negative: 'Prompt Negativo', basePrompt: 'Prompt Base', lora: 'URL de la LoRA', open: 'Abrir', urlPh: 'URL de referencia (https://...)', chars: 'chars', resHint: 'Resolución recomendada: 1024×1024', delSt: '¿Eliminar la storyline "{n}"? El archivo se borrará de la carpeta.', deleted: '¡Storyline eliminada!', expand: 'Haz doble clic para expandir', renameSt: 'Renombrar storyline', nameExists: 'Ya existe un archivo con ese nombre.', renamed: '¡Renombrado!', ph: 'Escribe las tags...', copy: 'Copiar prompt', copied: '¡Copiado!', noImg: 'Sin imagen', ok: 'OK', cancel: 'Cancelar', del: 'Eliminar', discard: 'Descartar', delSec: '¿Eliminar esta sección y todas sus cards?', delCard: '¿Eliminar esta card?', delImg: 'Quitar imagen', secName: 'Nombre de la sección', stName: 'Nombre de la storyline', saved: '¡Guardado en la carpeta!', unsupported: 'Usa Chrome o Edge (File System Access API).', noFiles: 'No hay storylines en la carpeta. Crea una nueva.', unsaved: 'Hay cambios sin guardar. ¿Guardar antes de continuar?', err: 'Error: ' }
+  pt: { homeDesc: 'Gerencie suas storylines salvando diretamente em arquivos JSON na sua pasta local.', pick: 'Selecione uma pasta para guardar ou carregar suas storylines', newSt: '+ Nova Storyline', addSec: '+ Adicionar Seção', save: 'Salvar na Pasta', addCard: '+ Adicionar Card', addImg: '+ Imagem', poseTitle: 'Título da Pose', newPose: 'Nova Pose', firstSec: 'Seção 1', positive: 'Prompt Positivo', negative: 'Prompt Negativo', basePrompt: 'Prompt Base', lora: 'URL da LoRA', open: 'Abrir', urlPh: 'URL de referência (https://...)', chars: 'chars', resHint: 'Resolução recomendada: 1024×1024', delSt: 'Excluir a storyline "{n}"? O arquivo será apagado da pasta.', deleted: 'Storyline excluída!', seedProc: 'Seed Processor', seedK: 'Seed Ksampler', newStS: '+ Storyline', addSecS: '+ Seção', saveS: 'Salvar', helper: 'Assistente de Prompt', helperPh: 'Escreva aqui o prompt da cena. Tags já presentes no Prompt Base ficam em amarelo, no Negativo em vermelho e as repetidas em laranja.', inBase: 'Já no Base', inNeg: 'No Negativo', dupDraft: 'Repetidas', bothLists: 'Em Base e Negativo:', dupBase: 'Repetidas no Base:', dupNeg: 'Repetidas no Negativo:', expand: 'Clique duas vezes para expandir', renameSt: 'Renomear storyline', nameExists: 'Já existe um arquivo com esse nome.', renamed: 'Renomeado!', ph: 'Digite as tags...', copy: 'Copiar prompt', copied: 'Copiado!', noImg: 'Sem imagem', ok: 'OK', cancel: 'Cancelar', del: 'Excluir', discard: 'Descartar', delSec: 'Excluir esta seção e todos os seus cards?', delCard: 'Excluir este card?', delImg: 'Remover imagem', secName: 'Nome da seção', stName: 'Nome da storyline', saved: 'Salvo na pasta!', unsupported: 'Use Chrome ou Edge (File System Access API).', noFiles: 'Nenhuma storyline na pasta. Crie uma nova.', unsaved: 'Há alterações não salvas. Deseja salvar antes de continuar?', err: 'Erro: ' },
+  en: { homeDesc: 'Manage your storylines by saving straight to JSON files in your local folder.', pick: 'Select a folder to store or load your storylines', newSt: '+ New Storyline', addSec: '+ Add Section', save: 'Save to Folder', addCard: '+ Add Card', addImg: '+ Image', poseTitle: 'Pose title', newPose: 'New Pose', firstSec: 'Section 1', positive: 'Positive Prompt', negative: 'Negative Prompt', basePrompt: 'Base Prompt', lora: 'LoRA URL', open: 'Open', urlPh: 'Reference URL (https://...)', chars: 'chars', resHint: 'Recommended resolution: 1024×1024', delSt: 'Delete storyline "{n}"? The file will be removed from the folder.', deleted: 'Storyline deleted!', seedProc: 'Seed Processor', seedK: 'Seed Ksampler', newStS: '+ Storyline', addSecS: '+ Section', saveS: 'Save', helper: 'Prompt Assistant', helperPh: 'Write the scene prompt here. Tags already in the Base Prompt are marked yellow, in the Negative red and repeated ones orange.', inBase: 'Already in Base', inNeg: 'In Negative', dupDraft: 'Repeated', bothLists: 'In both Base and Negative:', dupBase: 'Repeated in Base:', dupNeg: 'Repeated in Negative:', expand: 'Double-click to expand', renameSt: 'Rename storyline', nameExists: 'A file with that name already exists.', renamed: 'Renamed!', ph: 'Type tags...', copy: 'Copy prompt', copied: 'Copied!', noImg: 'No image', ok: 'OK', cancel: 'Cancel', del: 'Delete', discard: 'Discard', delSec: 'Delete this section and all its cards?', delCard: 'Delete this card?', delImg: 'Remove image', secName: 'Section name', stName: 'Storyline name', saved: 'Saved to folder!', unsupported: 'Use Chrome or Edge (File System Access API).', noFiles: 'No storylines in this folder. Create one.', unsaved: 'You have unsaved changes. Save before continuing?', err: 'Error: ' },
+  es: { homeDesc: 'Gestiona tus storylines guardando directamente en archivos JSON en tu carpeta local.', pick: 'Selecciona una carpeta para guardar o cargar tus storylines', newSt: '+ Nueva Storyline', addSec: '+ Añadir Sección', save: 'Guardar en la Carpeta', addCard: '+ Añadir Card', addImg: '+ Imagen', poseTitle: 'Título de la pose', newPose: 'Nueva Pose', firstSec: 'Sección 1', positive: 'Prompt Positivo', negative: 'Prompt Negativo', basePrompt: 'Prompt Base', lora: 'URL de la LoRA', open: 'Abrir', urlPh: 'URL de referencia (https://...)', chars: 'chars', resHint: 'Resolución recomendada: 1024×1024', delSt: '¿Eliminar la storyline "{n}"? El archivo se borrará de la carpeta.', deleted: '¡Storyline eliminada!', seedProc: 'Seed Processor', seedK: 'Seed Ksampler', newStS: '+ Storyline', addSecS: '+ Sección', saveS: 'Guardar', helper: 'Asistente de Prompt', helperPh: 'Escribe aquí el prompt de la escena. Las tags que ya están en el Prompt Base se marcan en amarillo, en el Negativo en rojo y las repetidas en naranja.', inBase: 'Ya en Base', inNeg: 'En Negativo', dupDraft: 'Repetidas', bothLists: 'En Base y Negativo:', dupBase: 'Repetidas en Base:', dupNeg: 'Repetidas en Negativo:', expand: 'Haz doble clic para expandir', renameSt: 'Renombrar storyline', nameExists: 'Ya existe un archivo con ese nombre.', renamed: '¡Renombrado!', ph: 'Escribe las tags...', copy: 'Copiar prompt', copied: '¡Copiado!', noImg: 'Sin imagen', ok: 'OK', cancel: 'Cancelar', del: 'Eliminar', discard: 'Descartar', delSec: '¿Eliminar esta sección y todas sus cards?', delCard: '¿Eliminar esta card?', delImg: 'Quitar imagen', secName: 'Nombre de la sección', stName: 'Nombre de la storyline', saved: '¡Guardado en la carpeta!', unsupported: 'Usa Chrome o Edge (File System Access API).', noFiles: 'No hay storylines en la carpeta. Crea una nueva.', unsaved: 'Hay cambios sin guardar. ¿Guardar antes de continuar?', err: 'Error: ' }
 };
 
 /* ---------- Estado ---------- */
@@ -15,10 +15,10 @@ const uid = () => Math.random().toString(36).slice(2, 9);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fixUrl = u => !u ? '' : /^https?:\/\//i.test(u) ? u : 'https://' + u;
 const openUrl = u => { u = fixUrl((u || '').trim()); if (u) window.open(u, '_blank', 'noopener'); };
-const mkCard = () => ({ id: uid(), title: t('newPose'), url: '', positive: '', negative: '', images: [], idx: 0 });
-const newStory = () => ({ model: { prompt: '', lora: '' }, sections: [{ id: uid(), title: t('firstSec'), cards: [mkCard()] }] });
+const mkCard = () => ({ id: uid(), title: t('newPose'), url: '', positive: '', seedProcessor: '', seedKsampler: '', images: [], idx: 0 });
+const newStory = () => ({ model: { prompt: '', negative: '', draft: '', lora: '' }, sections: [{ id: uid(), title: t('firstSec'), cards: [mkCard()] }] });
 const sec = id => data.sections.find(s => s.id === id);
-const mark = v => { dirty = v; $('btnSave').classList.toggle('dirty', v); };
+const mark = v => { dirty = v; document.querySelectorAll('#btnSave,#fabSave').forEach(b => b.classList.toggle('dirty', v)); };
 const show = id => document.querySelectorAll('.screen').forEach(s => s.classList.toggle('active', s.id === id));
 const toast = m => { const e = $('toast'); e.textContent = m; e.classList.add('show'); clearTimeout(e._t); e._t = setTimeout(() => e.classList.remove('show'), 2200); };
 
@@ -88,8 +88,8 @@ async function openFile(n) {
     const f = await (await dir.getFileHandle(n)).getFile();
     const j = JSON.parse(await f.text());
     data = {
-      model: { prompt: (j.model && j.model.prompt) || '', lora: (j.model && j.model.lora) || '' },
-      sections: (j.sections || []).map(s => ({ id: s.id || uid(), title: s.title || '', cards: (s.cards || []).map(c => ({ id: c.id || uid(), title: c.title || '', url: c.url || '', positive: c.positive || '', negative: c.negative || '', images: (c.images || []).map(i => ({ src: i.src })), idx: 0 })) }))
+      model: { prompt: (j.model && j.model.prompt) || '', negative: (j.model && j.model.negative) || '', draft: (j.model && j.model.draft) || '', lora: (j.model && j.model.lora) || '' },
+      sections: (j.sections || []).map(s => ({ id: s.id || uid(), title: s.title || '', cards: (s.cards || []).map(c => ({ id: c.id || uid(), title: c.title || '', url: c.url || '', positive: c.positive || '', seedProcessor: c.seedProcessor || c.seed || c.negative || '', seedKsampler: c.seedKsampler || '', images: (c.images || []).map(i => ({ src: i.src })), idx: 0 })) }))
     };
     cur = n; $('fileSelect').value = n; mark(false); render();
   } catch (e) { toast(t('err') + e.message); }
@@ -158,16 +158,21 @@ function mediaHTML(c) {
   return `<img src="${esc(im.src)}" alt="" data-act="zoom" draggable="false">${nav}<span class="count">${c.idx + 1}/${c.images.length}</span>`;
 }
 const field = (c, k) => `<label class="fld"><span>${t(k)}<em>${(c[k] || '').length} ${t('chars')}</em></span><div class="ta"><textarea data-f="${k}" placeholder="${t('ph')}" title="${t('expand')}">${esc(c[k])}</textarea><button type="button" class="icon copy" data-act="copy" data-k="${k}" data-tip="${t('copied')}" title="${t('copy')}">⧉</button></div></label>`;
+const sfield = (c, k, label) => `<label class="fld"><span>${label}</span><div class="ta one"><input data-f="${k}" value="${esc(c[k])}" placeholder="0"><button type="button" class="icon copy" data-act="copy" data-k="${k}" data-tip="${t('copied')}" title="${t('copy')}">⧉</button></div></label>`;
 const cardHTML = c => `<article class="card glass ${c.id === fresh ? 'pop' : ''}" data-c="${c.id}">
   <div class="card-top"><span class="grip" draggable="true" data-drag="card">⠿</span><input class="pose" data-f="title" value="${esc(c.title)}" placeholder="${t('poseTitle')}"><button class="icon del" data-act="delCard" title="${t('del')}">✕</button></div>
   <div class="media">${mediaHTML(c)}</div>
   <div class="row"><button class="btn sm" data-act="addImg" title="${t('resHint')}">${t('addImg')}</button><button class="btn sm danger" data-act="delImg" title="${t('delImg')}">🗑</button></div>
   ${field(c, 'positive')}
   <div class="url-row"><input data-f="url" value="${esc(c.url)}" placeholder="${t('urlPh')}"><button class="btn sm" data-act="openUrl" title="${t('open')}">↗</button></div>
-  ${field(c, 'negative')}</article>`;
-const modelHTML = () => `<section class="section glass model"><div class="sec-head"><h2 class="sec-name">Model</h2></div><div class="model-body">
-  <label class="fld"><span>${t('basePrompt')}<em>${data.model.prompt.length} ${t('chars')}</em></span><div class="ta"><textarea data-m="prompt" placeholder="${t('ph')}" title="${t('expand')}">${esc(data.model.prompt)}</textarea><button type="button" class="icon copy" data-act="copyModel" data-tip="${t('copied')}" title="${t('copy')}">⧉</button></div></label>
-  <div class="url-row"><input data-m="lora" value="${esc(data.model.lora)}" placeholder="${t('lora')} (https://...)"><button class="btn" data-act="openLora">${t('open')} ↗</button></div></div></section>`;
+  ${sfield(c, 'seedProcessor', t('seedProc'))}
+  ${sfield(c, 'seedKsampler', t('seedK'))}</article>`;
+const mfield = (k, label) => `<label class="fld"><span>${label}<em>${data.model[k].length} ${t('chars')}</em></span><div class="ta"><textarea data-m="${k}" placeholder="${t('ph')}" title="${t('expand')}">${esc(data.model[k])}</textarea><button type="button" class="icon copy" data-act="copyModel" data-k="${k}" data-tip="${t('copied')}" title="${t('copy')}">⧉</button></div></label>`;
+const helperHTML = () => `<div class="helper"><label class="fld"><span>${t('helper')}<em>${data.model.draft.length} ${t('chars')}</em></span><div class="hl"><div class="hl-back" id="hlBack"></div><textarea id="hlText" data-m="draft" placeholder="${t('helperPh')}" title="${t('expand')}">${esc(data.model.draft)}</textarea><button type="button" class="icon copy" data-act="copyModel" data-k="draft" data-tip="${t('copied')}" title="${t('copy')}">⧉</button></div></label><div class="hl-sum" id="hlSum"></div></div>`;
+const modelHTML = () => `<section class="section glass model"><div class="sec-head"><h2 class="sec-name">Model</h2></div><div class="model-layout"><div class="model-body">
+  ${mfield('prompt', t('basePrompt'))}
+  ${mfield('negative', t('negative'))}
+  <div class="url-row"><input data-m="lora" value="${esc(data.model.lora)}" placeholder="${t('lora')} (https://...)"><button class="btn" data-act="openLora">${t('open')} ↗</button></div></div>${helperHTML()}</div></section>`;
 function render() {
   const root = $('sections');
   if (!data) { root.innerHTML = ''; return; }
@@ -175,6 +180,7 @@ function render() {
     <div class="sec-head"><span class="grip" draggable="true" data-drag="sec">⠿</span><input class="sec-title" data-sf value="${esc(s.title)}"><button class="btn" data-act="addCard">${t('addCard')}</button><button class="btn danger" data-act="delSec" title="${t('del')}">🗑</button></div>
     <div class="cards">${s.cards.map(cardHTML).join('')}</div></section>`).join('');
   fresh = null;
+  updateHelper();
 }
 
 /* ---------- Eventos (delegação) ---------- */
@@ -186,7 +192,7 @@ document.addEventListener('click', async e => {
   const b = e.target.closest('[data-act]'); if (!b) return;
   const a = b.dataset.act;
   if (a === 'zoom') { lbImg.src = b.src; lb.classList.add('show'); lb.querySelector('.lb-scroll').scrollTo(0, 0); if (lbImg.complete) lbImg.onload(); return; }
-  if (a === 'copyModel') return copyText(b, data.model.prompt);
+  if (a === 'copyModel') return copyText(b, data.model[b.dataset.k]);
   if (a === 'openLora') return openUrl(data.model.lora);
   const se = b.closest('.section'), ce = b.closest('.card');
   const s = se && sec(se.dataset.s), c = s && ce && s.cards.find(x => x.id === ce.dataset.c);
@@ -207,7 +213,7 @@ document.addEventListener('click', async e => {
 });
 document.addEventListener('input', e => {
   const el = e.target, em = el.closest('.fld') && el.closest('.fld').querySelector('em');
-  if (el.dataset.m) { data.model[el.dataset.m] = el.value; if (em) em.textContent = el.value.length + ' ' + t('chars'); return mark(true); }
+  if (el.dataset.m) { data.model[el.dataset.m] = el.value; if (em) em.textContent = el.value.length + ' ' + t('chars'); updateHelper(); return mark(true); }
   const se = el.closest('.section'); if (!se) return;
   const s = sec(se.dataset.s);
   if ('sf' in el.dataset) s.title = el.value;
@@ -231,7 +237,9 @@ $('btnPick').onclick = pickFolder;
 $('btnNew').onclick = newStoryline;
 $('btnRename').onclick = renameStoryline;
 $('btnDelSt').onclick = deleteStoryline;
-$('btnSave').onclick = save;
+$('btnSave').onclick = $('fabSave').onclick = save;
+// celular: ao rolar além do header, só o botão de salvar fica visível (o header completo fica no topo da página)
+new IntersectionObserver(([e]) => { document.body.classList.toggle('hdr-away', !e.isIntersecting); if (!e.isIntersecting) syncFab(); }).observe(document.querySelector('.topbar'));
 $('btnAddSection').onclick = async () => {
   if (!data) return toast(t('noFiles'));
   const r = await ask({ title: t('secName'), fields: [{ ph: '...' }] });
@@ -240,10 +248,15 @@ $('btnAddSection').onclick = async () => {
   data.sections.push(s); fresh = s.id; mark(true); render();
   setTimeout(() => $('sections').lastElementChild.scrollIntoView({ behavior: 'smooth' }), 50);
 };
-$('fileSelect').onchange = async e => {
-  if (!await guard()) { e.target.value = cur; return; }
-  await openFile(e.target.value);
+const syncFab = () => { $('fabFile').innerHTML = $('fileSelect').innerHTML; $('fabFile').value = $('fileSelect').value; };
+const switchTo = async (name, sel) => {
+  if (!await guard()) { sel.value = cur; return; }
+  await openFile(name); syncFab();
 };
+$('fileSelect').onchange = e => switchTo(e.target.value, e.target);
+$('fabFile').onchange = e => switchTo(e.target.value, e.target);
+$('fabNew').onclick = newStoryline;
+$('fabSec').onclick = () => $('btnAddSection').onclick();
 document.querySelectorAll('.langSel').forEach(s => s.onchange = e => { lang = e.target.value; localStorage.lang = lang; applyLang(); });
 const setTheme = v => { document.documentElement.dataset.theme = v; document.querySelectorAll('.themeSel').forEach(s => s.value = v); };
 document.querySelectorAll('.themeSel').forEach(s => s.onchange = e => { setTheme(e.target.value); localStorage.theme = e.target.value; });
@@ -315,6 +328,33 @@ document.addEventListener('drop', e => {
   mark(true); render();
 });
 document.addEventListener('dragend', () => { clearDrop(); document.body.classList.remove('sorting-sec'); document.querySelectorAll('.dragging').forEach(e => e.classList.remove('dragging')); drag = drop = null; });
+
+/* ---------- Assistente de prompt: marca tags repetidas ---------- */
+// Cada tag (separada por vírgula, ponto e vírgula ou quebra de linha) é normalizada: minúsculas, sem pesos
+// "(tag:1.2)", sem parênteses e com "_" = espaço. Assim "no_humans" e "no humans" são a mesma tag.
+const SPLIT = /([,;\n]+)/;
+const tagKey = s => s.toLowerCase().replace(/\\/g, '').replace(/[()[\]{}]/g, '').replace(/:\s*-?\d*\.?\d+\s*$/, '').replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+const tagsOf = txt => txt.split(SPLIT).filter((_, i) => i % 2 === 0).map(tagKey).filter(Boolean);
+const countMap = arr => arr.reduce((m, k) => (m[k] = (m[k] || 0) + 1, m), {});
+function updateHelper() {
+  const back = $('hlBack'); if (!back || !data) return;
+  const m = data.model, base = countMap(tagsOf(m.prompt)), neg = countMap(tagsOf(m.negative)), dr = countMap(tagsOf(m.draft));
+  let nb = 0, nn = 0, nd = 0;
+  back.innerHTML = m.draft.split(SPLIT).map((seg, i) => {
+    if (i % 2) return esc(seg);
+    const p = seg.match(/^(\s*)([\s\S]*?)(\s*)$/), k = tagKey(p[2]);
+    const cls = !k ? '' : neg[k] ? 'm-neg' : base[k] ? 'm-base' : dr[k] > 1 ? 'm-dup' : '';
+    if (!cls) return esc(seg);
+    if (cls === 'm-neg') nn++; else if (cls === 'm-base') nb++; else nd++;
+    return esc(p[1]) + `<mark class="${cls}">${esc(p[2])}</mark>` + esc(p[3]);
+  }).join('') + '\n';
+  back.scrollTop = $('hlText').scrollTop;
+  const dups = o => Object.keys(o).filter(k => o[k] > 1), list = a => a.slice(0, 8).join(', ') + (a.length > 8 ? '…' : '');
+  const rows = [[t('bothLists'), Object.keys(base).filter(k => neg[k])], [t('dupBase'), dups(base)], [t('dupNeg'), dups(neg)]].filter(r => r[1].length);
+  $('hlSum').innerHTML = `<span class="chip m-base">${t('inBase')}: ${nb}</span><span class="chip m-neg">${t('inNeg')}: ${nn}</span><span class="chip m-dup">${t('dupDraft')}: ${nd}</span>` +
+    rows.map(r => `<div class="hl-row"><b>${r[0]}</b> ${esc(list(r[1]))}</div>`).join('');
+}
+document.addEventListener('scroll', e => { if (e.target.id === 'hlText') $('hlBack').scrollTop = e.target.scrollTop; }, true);
 
 /* ---------- Init ---------- */
 document.querySelectorAll('.themeSel').forEach(s => fill(s, THEMES));

@@ -19,12 +19,13 @@ Sem servidor, sem banco de dados, sem conta: são só `index.html`, `style.css` 
 
 **Seção Model**
 - Uma seção **Model** fixa fica sempre no topo e não pode ser movida nem excluída.
-- Ela guarda o **prompt base** do projeto e uma **URL de LoRA**, com um botão que abre o link em nova aba.
+- Ela guarda o **prompt base** e o **prompt negativo** do projeto e uma **URL de LoRA**, com um botão que abre o link em nova aba.
+- Ao lado desses campos fica um grande **Assistente de Prompt**: escreva ali o prompt da cena e ele marca as tags que já estão no prompt base (amarelo), as que estão no prompt negativo (vermelho) e as repetidas dentro do próprio texto (laranja). As tags são comparadas sem diferenciar maiúsculas, pesos e `_` de espaço, então `no_humans` equivale a `no humans`. Um resumo também lista as tags que aparecem ao mesmo tempo no prompt base e no negativo.
 - Toda nova storyline já nasce com a seção Model e uma seção normal com um card vazio.
 
 **Seções e cards**
 - As seções têm título editável, botão *Adicionar Card* e botão de excluir com confirmação.
-- Cada card tem título da pose, **prompt positivo** e **prompt negativo** (contador de caracteres ao vivo e cópia com um clique, com o aviso "Copiado!") e um botão de **URL de referência** entre eles.
+- Cada card tem título da pose, **prompt positivo** (contador de caracteres ao vivo e cópia com um clique, com o aviso "Copiado!"), um botão de **URL de referência** e dois campos de uma linha: **Seed Processor** e **Seed Ksampler**.
 - **Carrossel de imagens** por card: envie várias imagens de uma vez, navegue com as setas e o indicador `1/3` e remova a imagem ativa.
 - **Lightbox**: clique em uma imagem para vê-la na resolução original (recomendado: 1024×1024).
 - **Expansão de prompt**: dê dois cliques em qualquer caixa de prompt para editá-la em uma janela grande.
@@ -33,7 +34,7 @@ Sem servidor, sem banco de dados, sem conta: são só `index.html`, `style.css` 
 **Interface**
 - 10 temas: Aurora, Midnight Violet, Slate Minimal, Deep Emerald, Cyber Onyx, Obsidian Rose e quatro temas escuros suaves/pastel (Lavender, Mint, Peach, Sky).
 - Três idiomas: 🇧🇷 Português, 🇺🇸 English e 🇪🇸 Español. Tema e idioma ficam disponíveis na Home e no Workspace e são lembrados pelo navegador.
-- Responsivo a partir de 360 px de largura, com animações suaves (respeita a preferência de movimento reduzido).
+- Responsivo a partir de 360 px de largura: no celular, os cards rolam para o lado dentro de cada seção, e no celular e no tablet o header fica no topo da página e vira uma barra flutuante compacta (lista de storylines, nova storyline, adicionar seção e salvar) ao rolar. Animações suaves, respeitando a preferência de movimento reduzido.
 
 ## 🌐 Navegadores compatíveis
 
@@ -73,7 +74,7 @@ Cada storyline é um arquivo `.json`:
 
 ```json
 {
-  "model": { "prompt": "prompt base…", "lora": "https://…" },
+  "model": { "prompt": "prompt base…", "negative": "…", "draft": "…", "lora": "https://…" },
   "sections": [
     {
       "id": "a1b2c3d",
@@ -84,7 +85,8 @@ Cada storyline é um arquivo `.json`:
           "title": "Pose 1",
           "url": "https://…",
           "positive": "…",
-          "negative": "…",
+          "seedProcessor": "…",
+          "seedKsampler": "…",
           "images": [{ "src": "data:image/png;base64,…" }]
         }
       ]
