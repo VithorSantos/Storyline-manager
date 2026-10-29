@@ -20,7 +20,7 @@ No server, no database, no account: it is just `index.html`, `style.css` and `ap
 **Model section**
 - A fixed **Model** section always stays on top and cannot be moved or deleted.
 - It holds the project's **base prompt**, **negative prompt** and a **LoRA URL** with a button that opens it in a new tab.
-- Next to those fields sits a large **Prompt Assistant**: write the scene prompt there and it highlights tags already in the base prompt (yellow), tags in the negative prompt (red) and tags repeated inside the text (orange). Tags are compared ignoring case, weights and the difference between `_` and spaces, so `no_humans` equals `no humans`. A summary also lists tags that appear in both the base and the negative prompt.
+- Next to those fields sits a large **Prompt Assistant**: write the scene prompt there and it highlights tags already in the base prompt (yellow), tags in the negative prompt (red) and tags repeated inside the text (orange). Tags are compared ignoring case, weights and the difference between `_` and spaces, so `no_humans` equals `no humans`. A summary also lists tags that appear in both the base and the negative prompt. The **Possibly repeated** option (ON/OFF toggle) also flags tags of the same category with different colors (against the base prompt and within the text itself), such as `white_hair` and `brown_hair` or `black shirt` and `white shirt` (cyan).
 - Every new storyline starts with the Model section plus one regular section with an empty card.
 
 **Sections and cards**
