@@ -20,7 +20,7 @@ Sem servidor, sem banco de dados, sem conta: são só `index.html`, `style.css` 
 **Seção Model**
 - Uma seção **Model** fixa fica sempre no topo e não pode ser movida nem excluída.
 - Ela guarda o **prompt base** e o **prompt negativo** do projeto e uma **URL de LoRA**, com um botão que abre o link em nova aba.
-- Ao lado desses campos fica um grande **Assistente de Prompt**: escreva ali o prompt da cena e ele marca as tags que já estão no prompt base (amarelo), as que estão no prompt negativo (vermelho) e as repetidas dentro do próprio texto (laranja). As tags são comparadas sem diferenciar maiúsculas, pesos e `_` de espaço, então `no_humans` equivale a `no humans`. Um resumo também lista as tags que aparecem ao mesmo tempo no prompt base e no negativo.
+- Ao lado desses campos fica um grande **Assistente de Prompt**: escreva ali o prompt da cena e ele marca as tags que já estão no prompt base (amarelo), as que estão no prompt negativo (vermelho) e as repetidas dentro do próprio texto (laranja). As tags são comparadas sem diferenciar maiúsculas, pesos e `_` de espaço, então `no_humans` equivale a `no humans`. Um resumo também lista as tags que aparecem ao mesmo tempo no prompt base e no negativo. A opção **Possivelmente repetido** (liga/desliga com ON/OFF) também sinaliza tags da mesma categoria com cores diferentes (em relação ao prompt base e dentro do próprio texto), como `white_hair` e `brown_hair` ou `black shirt` e `white shirt` (ciano).
 - Toda nova storyline já nasce com a seção Model e uma seção normal com um card vazio.
 
 **Seções e cards**

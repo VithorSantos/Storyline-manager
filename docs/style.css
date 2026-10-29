@@ -144,7 +144,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--acc);box-shadow:0 0 0
 .model-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:stretch}
 .helper{display:flex;flex-direction:column;gap:8px;min-width:0}
 .helper .fld{flex:1;display:flex;flex-direction:column;min-height:0}
-.hl{position:relative;flex:1;min-height:200px}
+.hl{position:relative;flex:1;min-height:180px}
 .hl-back,.hl textarea{position:absolute;inset:0;width:100%;height:100%;padding:10px 58px 10px 10px;border:1px solid var(--bd);border-radius:10px;font:13px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;overflow-y:scroll;scrollbar-width:thin}
 .hl-back{background:rgba(0,0,0,.28);color:transparent;overflow-x:hidden;pointer-events:none;scrollbar-color:transparent transparent}
 .hl textarea{background:transparent;resize:none;color:var(--txt);z-index:1}
@@ -154,10 +154,9 @@ mark{color:transparent;border-radius:3px}
 .m-neg{background:rgba(255,93,115,.38)}
 .m-dup{background:rgba(251,146,60,.38)}
 .hl-sum{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--mut)}
-.chip{padding:2px 10px;border-radius:99px;color:var(--txt)}
 .hl-row{flex-basis:100%;overflow-wrap:anywhere}
 .hl-row b{color:var(--txt);font-weight:600}
-@media (max-width:900px){.model-layout{grid-template-columns:minmax(0,1fr)}.hl{min-height:220px}}
+@media (max-width:900px){.model-layout{grid-template-columns:minmax(0,1fr)}.hl{min-height:200px}}
 /* barra flutuante (celular e tablet): header completo no topo da página; ao rolar, só estes botões */
 .fab-bar{display:none;position:fixed;top:8px;left:8px;right:8px;z-index:30;padding:6px;gap:6px;align-items:center;animation:fade .25s}
 .fab-bar>*{min-width:0;font-size:12px;padding:8px 10px;white-space:nowrap}
@@ -169,3 +168,22 @@ mark{color:transparent;border-radius:3px}
   .cards{display:flex;align-items:flex-start;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding-bottom:10px;-webkit-overflow-scrolling:touch}
   .card{flex:0 0 85%;scroll-snap-align:start}
 }
+.m-poss{background:rgba(34,211,238,.32)}
+/* chip "Possivelmente repetido" com interruptor estilo iOS */
+/* chips do resumo: mesma altura e texto centralizado */
+.chip{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;height:30px;padding:0 12px;border-radius:99px;color:var(--txt);line-height:1;white-space:nowrap}
+.chip.m-poss{gap:8px;padding:0 4px 0 12px}
+.chip.m-poss.off{background:rgba(255,255,255,.08)}
+.chip.m-poss .lbl{transition:opacity .3s}
+.chip.m-poss.off .lbl{opacity:.6}
+/* interruptor estilo iOS, na cor do tema, com animação elástica */
+.switch{position:relative;flex:none;width:38px;height:22px;padding:0;border:0;border-radius:99px;cursor:pointer;background:#f4f4f5;box-shadow:inset 0 0 0 2px #8e8e93;transition:background .3s,box-shadow .3s}
+.switch::before{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;pointer-events:none}
+.switch::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:99px;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.34,1.56,.64,1),width .15s}
+.switch.on{background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:inset 0 0 0 2px rgba(0,0,0,.12)}
+.switch.on::after{transform:translateX(16px)}
+.switch:active::after{width:22px}
+.switch.on:active::after{transform:translateX(12px)}
+.switch.pulse::before{animation:ring .36s ease-out}
+@keyframes ring{from{opacity:.8;box-shadow:0 0 0 0 var(--acc)}to{opacity:0;box-shadow:0 0 0 8px var(--acc)}}
+.switch:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
