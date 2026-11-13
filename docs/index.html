@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="aurora">
+<html lang="pt-BR" data-theme="blue">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,44 +10,178 @@
 <div class="bg-orb o1"></div><div class="bg-orb o2"></div>
 
 <!-- Tela 1: Menu principal -->
-<main id="home" class="screen active">
-  <div class="home-settings"><select class="themeSel" aria-label="Theme"></select><select class="langSel" aria-label="Language"></select></div>
-  <div class="glass home-card">
-    <div class="logo">🎬</div>
-    <h1>Storyline Manager</h1>
-    <p data-i18n="homeDesc"></p>
-    <button class="btn primary" id="btnPick" data-i18n="pick"></button>
+<main id="home" class="screen active" data-mode="dark">
+  <div class="home-bg day"></div><div class="home-bg night"></div><div class="home-shade"></div>
+  <div class="home-wrap">
+    <header class="home-top">
+      <div class="menu-wrap">
+        <button type="button" class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false"><span id="menuLabel"></span></button>
+        <ul class="menu-pop" id="menuPop" role="menu"></ul>
+      </div>
+      <nav class="theme-bar" id="themeBar" aria-label="Theme">
+      <button type="button" class="theme-btn" data-th="blue" style="--c:#2563eb"><i class="dot"></i><span data-i18n="th_blue"></span></button>
+      <button type="button" class="theme-btn" data-th="purple" style="--c:#702963"><i class="dot"></i><span data-i18n="th_purple"></span></button>
+      <button type="button" class="theme-btn" data-th="cyan" style="--c:#22d3ee"><i class="dot"></i><span data-i18n="th_cyan"></span></button>
+      <button type="button" class="theme-btn" data-th="amber" style="--c:#f59e0b"><i class="dot"></i><span data-i18n="th_amber"></span></button>
+      <button type="button" class="theme-btn" data-th="crimson" style="--c:#64242F"><i class="dot"></i><span data-i18n="th_crimson"></span></button>
+      </nav>
+      <div class="home-right">
+        <div class="mode-sw" data-sw="home"></div>
+        <div class="theme-drop" id="themeDrop">
+          <button type="button" class="theme-cur" id="themeCur" aria-label="Theme" aria-haspopup="true" aria-expanded="false"><i class="dot"></i></button>
+          <ul class="theme-pop" id="themePop" role="menu"></ul>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <h1><span data-i18n="heroPre"></span> <span class="accent-word">Manager</span></h1>
+      <p data-i18n="homeDesc"></p>
+      <div class="hero-actions">
+        <a class="pill ghost" href="https://github.com/VithorSantos/Storyline-manager" target="_blank" rel="noopener"><span data-i18n="seeMore"></span><i class="arr">↗</i></a>
+        <button type="button" class="pill solid" id="btnPick"><span data-i18n="openFolder"></span><i class="arr">↗</i></button>
+      </div>
+      <button type="button" class="last-btn" id="btnLast" hidden></button>
+      <small class="hero-hint" data-i18n="pick"></small>
+    </section>
+    <footer class="home-foot">
+      <span>© 2026 - VithorSantos</span>
+      <div class="socials">
+        <a href="https://github.com/VithorSantos" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="https://www.linkedin.com/in/vithor-santos-149548357/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 5.5h2.6V14H2zM3.3 1.6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM6.4 5.5h2.5v1.2c.4-.7 1.3-1.4 2.6-1.4 2.7 0 3.2 1.8 3.2 4.1V14h-2.6V9.9c0-1 0-2.2-1.4-2.2s-1.6 1-1.6 2.1V14H6.4z"/></svg></a>
+        <a href="https://www.youtube.com/@DevVithorXD" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M15.2 4.3c-.2-.7-.7-1.2-1.4-1.4C12.6 2.6 8 2.6 8 2.6s-4.6 0-5.8.3C1.5 3.1 1 3.6.8 4.3.5 5.5.5 8 .5 8s0 2.5.3 3.7c.2.7.7 1.2 1.4 1.4 1.2.3 5.8.3 5.8.3s4.6 0 5.8-.3c.7-.2 1.2-.7 1.4-1.4.3-1.2.3-3.7.3-3.7s0-2.5-.3-3.7zM6.5 10.3V5.7L10.5 8z"/></svg></a>
+      </div>
+    </footer>
   </div>
 </main>
 
 <!-- Tela 2: Workspace -->
-<main id="workspace" class="screen">
+<main id="dashboard" class="screen" data-mode="dark">
+  <aside class="d-side">
+    <a class="d-logo" id="dLogo" href="#" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4c-6 0-12 4-12 12v2l-4 4M8 18c6 0 12-4 12-14M8 14h7"/></svg><span>Storyline<br>Manager</span></a>
+    <nav class="d-nav">
+      <button type="button" class="d-link active" id="navHome"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8v10a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1z"/></svg><span data-i18n="navHome"></span></button>
+      <button type="button" class="d-link" id="navLib"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h7a3 3 0 013 3v13a2 2 0 00-2-2H2zM22 4h-7a3 3 0 00-3 3v13a2 2 0 012-2h8z"/></svg><span data-i18n="navLib"></span></button>
+      <button type="button" class="d-link" id="navSet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span data-i18n="navSet"></span></button>
+    </nav>
+    <div class="d-social"><a href="https://github.com/VithorSantos" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a><a href="https://www.linkedin.com/in/vithor-santos-149548357/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 5.5h2.6V14H2zM3.3 1.6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM6.4 5.5h2.5v1.2c.4-.7 1.3-1.4 2.6-1.4 2.7 0 3.2 1.8 3.2 4.1V14h-2.6V9.9c0-1 0-2.2-1.4-2.2s-1.6 1-1.6 2.1V14H6.4z"/></svg></a></div>
+  </aside>
+  <div class="d-main">
+    <header class="d-head">
+      <label class="d-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="dSearch" data-i18n-ph="searchPh" autocomplete="off"><kbd>Ctrl K</kbd></label>
+      <div class="d-tools">
+        <div class="mode-sw" data-sw="dash"></div>
+        <div class="dd"><button type="button" class="dd-btn pillbtn" id="dLangBtn"></button><ul class="dd-pop" id="dLangPop"></ul></div>
+        <div class="dd"><button type="button" class="dd-btn cust" id="dCust" aria-label="Theme"><i class="dot"></i></button><ul class="dd-pop" id="dThemePop"></ul></div>
+        <button type="button" class="d-new" id="dNew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="newProj"></span></button>
+      </div>
+    </header>
+    <section class="hero-d" id="hero">
+      <div class="slides"><div class="slide on" style="background-image:url(assets/carousel-1.jpg)"></div><div class="slide" style="background-image:url(assets/carousel-2.jpg)"></div><div class="slide" style="background-image:url(assets/carousel-3.jpg)"></div></div>
+      <div class="hero-in">
+        <span class="chip-w">✦ <span data-i18n="welcome"></span></span>
+        <h2>Storyline <span class="accent-word">Manager</span></h2>
+        <p data-i18n="heroSub"></p>
+        <div class="hero-btns"><button type="button" class="d-new" id="dStart"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 001.5.86l12-7.5a1 1 0 000-1.72l-12-7.5A1 1 0 007 4.5z"/></svg><span data-i18n="startNow"></span></button><a class="d-ghost" href="https://www.youtube.com/@DevVithorXD" target="_blank" rel="noopener"><span data-i18n="tutorials"></span></a></div>
+      </div>
+      <div class="slide-nav"><button type="button" id="slidePrev" aria-label="‹">‹</button><span id="slideNum">1 / 3</span><button type="button" id="slideNext" aria-label="›">›</button></div>
+    </section>
+    <section class="stats">
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6a2 2 0 012-2h4l2 3h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><div><b id="stStN">0</b><small data-i18n="stSt"></small></div></div>
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><b id="stSecN">0</b><small data-i18n="stSec"></small></div></div>
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l10 5-10 5L2 7zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><div><b id="stCardsN">0</b><small data-i18n="stCards"></small></div></div>
+      <div class="stat"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b id="stLastN">0</b><small data-i18n="stLast"></small></div></div>
+    </section>
+    <section id="projects">
+      <div class="proj-head">
+        <div><h3 data-i18n="yourProj"></h3><p data-i18n="yourProjSub"></p></div>
+        <div class="proj-tools">
+          <button type="button" class="del-mode" id="delModeBtn" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/></svg></button>
+          <label class="d-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="pSearch" data-i18n-ph="searchProj" autocomplete="off"></label>
+          <div class="sortbox"><div class="dd"><button type="button" class="dd-btn pillbtn"><span data-i18n="sortBy"></span>: <b id="sortLbl"></b></button><ul class="dd-pop" id="sortPop"></ul></div><button type="button" id="sortDirBtn" aria-label="Order">↓</button></div>
+          <div class="view-sw"><button type="button" id="vGrid" aria-label="Grid">▦</button><button type="button" id="vList" aria-label="List">☰</button></div>
+        </div>
+      </div>
+      <div class="proj-grid grid" id="projGrid"></div>
+    </section>
+  </div>
+  <div class="proj-menu" id="projMenu" role="menu" hidden></div>
+  <div class="sel-bar" id="selBar" hidden><span class="sb-count" id="sbCount"></span><button type="button" data-sb="all" id="sbAll"></button><button type="button" data-sb="del" class="sb-del" id="sbDel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/></svg><span></span></button><button type="button" data-sb="cancel" id="sbCancel"></button></div>
+</main>
+
+<main id="workspace" class="screen" data-mode="dark" data-wsbg="dark">
   <header class="topbar glass">
-    <div class="brand">🎬 Storyline Manager</div>
-    <select id="fileSelect" aria-label="Storyline"></select>
+    <button class="btn" id="btnBack" data-i18n="back"></button>
+    <div class="fdd" id="fileDd"></div>
     <button class="btn" id="btnRename" aria-label="Rename">✏️</button>
     <button class="btn danger" id="btnDelSt" aria-label="Delete">🗑</button>
-    <button class="btn" id="btnNew" data-i18n="newSt"></button>
+    <button class="btn new-st" id="btnNew" data-i18n="newSt"></button>
     <span class="spacer"></span>
-    <select class="themeSel" aria-label="Theme"></select>
-    <select class="langSel" aria-label="Language"></select>
+    <div class="mode-sw" data-sw="ws" data-color="1"></div>
+    <div class="dd"><button type="button" class="dd-btn pillbtn" id="wThemeBtn" aria-label="Theme"><i class="dot"></i><span id="wThemeLbl"></span></button><ul class="dd-pop" id="wThemePop"></ul></div>
+    <div class="dd"><button type="button" class="dd-btn pillbtn" id="wLangBtn" aria-label="Language"></button><ul class="dd-pop" id="wLangPop"></ul></div>
+    <button type="button" class="btn" id="btnSettings" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></button>
     <button class="btn primary" id="btnAddSection" data-i18n="addSec"></button>
+    <span class="save-st" id="autoSt" role="status" aria-live="polite"></span>
     <button class="btn success" id="btnSave" data-i18n="save"></button>
   </header>
   <div class="fab-bar glass">
-    <select id="fabFile" aria-label="Storyline"></select>
-    <button class="btn" id="fabNew" data-i18n="newStS"></button>
+    <div class="fdd" id="fabDd"></div>
+    <button class="btn new-st" id="fabNew" data-i18n="newStS"></button>
     <button class="btn primary" id="fabSec" data-i18n="addSecS"></button>
+    <span class="save-st" id="fabSt"></span>
     <button class="btn success" id="fabSave" data-i18n="saveS"></button>
   </div>
   <div id="sections"></div>
 </main>
+
+<!-- Configurações (salvamento e imagens) -->
+<div id="settings" class="set" aria-hidden="true">
+  <div class="set-box" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+    <header class="set-head"><h2 id="setTitle" data-i18n="setTitle"></h2><button type="button" class="set-x" id="setX" aria-label="Close">✕</button></header>
+    <div class="set-body">
+      <nav class="set-nav" id="setNav" aria-label="Sections">
+        <button type="button" class="on" data-pane="save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg><span data-i18n="setSecSave"></span></button>
+        <button type="button" data-pane="img"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span data-i18n="setSecImg"></span></button>
+        <button type="button" data-pane="data"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span data-i18n="setSecData"></span></button>
+      </nav>
+      <div class="set-main" id="setMain">
+        <p class="set-intro" id="setIntro" data-i18n="setIntro" hidden></p>
+        <section class="set-pane" data-pane="save">
+          <h3 data-i18n="setSecSave"></h3>
+          <div class="set-row"><div class="set-lbl"><b data-i18n="autoName"></b><small data-i18n="autoDesc"></small></div><button type="button" class="switch" id="sAuto" role="switch" aria-checked="false" aria-label="Autosave"></button></div>
+        </section>
+        <section class="set-pane" data-pane="img" hidden>
+          <h3 data-i18n="setSecImg"></h3>
+          <div class="set-row"><div class="set-lbl"><b data-i18n="keepName"></b><small data-i18n="keepDesc"></small></div><button type="button" class="switch" id="sKeep" role="switch" aria-checked="false" aria-label="Keep originals"></button></div>
+          <div class="set-note warn" id="sKeepWarn"><b data-i18n="keepWTitle"></b><ul><li data-i18n="keepW1"></li><li data-i18n="keepW2"></li><li data-i18n="keepW3"></li><li data-i18n="keepW4"></li><li data-i18n="keepW5"></li></ul><p data-i18n="keepWTip"></p></div>
+          <div class="set-group" id="sConv">
+            <div class="set-row"><div class="set-lbl"><b data-i18n="fmtName"></b></div><div class="seg" id="sFmt" role="radiogroup" aria-label="Format"><button type="button" role="radio" data-fmt="webp">WebP</button><button type="button" role="radio" data-fmt="png">PNG</button><button type="button" role="radio" data-fmt="jpeg">JPEG</button></div></div>
+            <div class="set-note" id="sFmtNote" role="note"></div>
+            <div class="set-row" id="sQualRow"><div class="set-lbl"><b data-i18n="qualName"></b><small data-i18n="qualDesc"></small></div><div class="rng"><input type="range" id="sQual" min="60" max="100" step="1" aria-label="Quality"><output id="sQualV"></output></div></div>
+            <div class="set-row"><div class="set-lbl"><b data-i18n="resName"></b><small data-i18n="resDesc"></small></div><div class="res-ctl"><select id="sRes" aria-label="Resolution"><option value="904"></option><option value="1024">1024 × 1024</option><option value="768">768 × 768</option><option value="1536">1536 × 1536</option><option value="custom" data-i18n="resCustom"></option><option value="orig" data-i18n="resOrig"></option></select><span class="cust-wh" id="sCustom" hidden><input id="sW" type="number" min="64" max="8192" inputmode="numeric" aria-label="Width"><i>×</i><input id="sH" type="number" min="64" max="8192" inputmode="numeric" aria-label="Height"></span></div></div>
+            <div class="set-err" id="sResErr" role="alert" hidden data-i18n="resBad"></div>
+            <div class="set-row"><div class="set-lbl"><b data-i18n="upName"></b><small data-i18n="upDesc"></small></div><button type="button" class="switch" id="sUp" role="switch" aria-checked="false" aria-label="Upscale"></button></div>
+          </div>
+        </section>
+        <section class="set-pane" data-pane="data" hidden>
+          <h3 data-i18n="setSecData"></h3>
+          <div class="set-row"><div class="set-lbl"><b data-i18n="convName"></b><small id="sConvDesc"></small></div><button type="button" class="btn" id="sConvAll" data-i18n="convBtn"></button></div>
+          <div class="set-row"><div class="set-lbl"><b data-i18n="bkName"></b><small data-i18n="bkDesc"></small></div><button type="button" class="switch" id="sBk" role="switch" aria-checked="false" aria-label="Backup"></button></div>
+          <div class="set-row"><div class="set-lbl"><b data-i18n="dlName"></b><small data-i18n="dlDesc"></small></div><div class="dl-ctl"><select id="sDlSt" aria-label="Storyline"></select><select id="sDlFmt" aria-label="Format"><option value="stored" data-i18n="dlFmtStored"></option><option value="png" data-i18n="dlFmtPng"></option></select><button type="button" class="btn primary" id="sDl" data-i18n="dlBtn"></button></div></div>
+        </section>
+      </div>
+    </div>
+    <footer class="set-foot"><button type="button" class="btn" id="setReset" data-i18n="setReset"></button><span class="spacer"></span><button type="button" class="btn" id="setCancel" data-i18n="cancel"></button><button type="button" class="btn primary" id="setSave"></button></footer>
+  </div>
+</div>
+<div class="job-wrap" id="jobWrap" hidden><div class="job glass" role="status"><div class="job-top"><span id="jobTxt"></span><button type="button" class="btn sm" id="jobX"></button></div><div class="job-bar"><i id="jobBar"></i></div></div></div>
 
 <!-- Modal genérico -->
 <div id="modal" class="modal">
   <div class="glass modal-box">
     <h3 id="mTitle"></h3>
     <div id="mFields"></div>
+    <div class="m-err" id="mErr" role="alert" hidden></div>
     <div class="row"><button class="btn" id="mCancel"></button><button class="btn" id="mAlt" hidden></button><button class="btn primary" id="mOk"></button></div>
   </div>
 </div>
@@ -55,7 +189,9 @@
 <div id="lightbox" class="lightbox"><button class="icon lb-close" id="lbClose" aria-label="Close">✕</button><div class="lb-scroll"><img alt=""></div><small id="lbHint"></small></div>
 <div id="pvx" class="lightbox"><button class="icon lb-close" id="pvClose" aria-label="Close">✕</button><div class="pv-box glass"><div class="pv-head"><span id="pvTitle"></span><em id="pvCount"></em></div><textarea id="pvText"></textarea></div></div>
 <input type="file" id="fileInput" accept="image/*" multiple hidden>
+<input type="file" id="coverInput" accept="image/*" hidden>
 <div id="toast" class="toast"></div>
+<script src="dictionary.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
