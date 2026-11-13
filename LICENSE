@@ -1,21 +1,56 @@
-MIT License
+Storyline Manager - Free Use License
 
-Copyright (c) 2026 [Vithor Massing dos Santos]
+Copyright (c) 2026 [YOUR NAME]. All rights reserved, except as expressly
+granted below.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. GRANT OF USE
+Permission is granted, free of charge, to any person to download and run the
+software and associated files (the "Software") on their own devices and to use
+it for personal or professional purposes, including creating and storing their
+own content with it. This permission includes only the copies strictly
+necessary to run the Software (for example, downloading it and the browser's
+normal caching).
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. RESTRICTIONS
+Except as expressly permitted in Section 1, or with the prior written
+permission of the copyright holder, you may NOT:
+  - copy the Software;
+  - modify, adapt, translate or create derivative works of the Software;
+  - merge the Software with other software or materials;
+  - publish the Software or make it available to third parties, including
+    hosting it online;
+  - distribute the Software;
+  - sublicense the Software; or
+  - sell, rent, lease or otherwise commercialize copies of the Software.
 
+3. GITHUB PLATFORM
+Nothing in this license limits the rights that GitHub's Terms of Service grant
+to other users to view and fork this repository on GitHub. Any use of the
+Software outside those rights remains subject to this license.
+
+4. YOUR CONTENT
+Files and data you create with the Software (such as storyline JSON files,
+prompts and images) belong to you. This license grants the copyright holder no
+rights over them.
+
+5. THIRD-PARTY COMPONENTS
+Any third-party resources loaded by the Software (for example, web fonts
+served from a CDN) remain subject to their own licenses.
+
+6. OWNERSHIP
+The Software is licensed, not sold. All rights not expressly granted in this
+license are reserved by the copyright holder.
+
+7. TERMINATION
+This license terminates automatically if you breach any of its terms. Upon
+termination you must stop using the Software and delete all copies in your
+possession.
+
+8. DISCLAIMER OF WARRANTY
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
